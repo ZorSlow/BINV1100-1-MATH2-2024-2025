@@ -38,6 +38,14 @@ public interface EnsembleInterface {
 	// lance une IllegalArgumentException en cas de param?tre invalide
 	public default void ajouter(EnsembleInterface a) {
 		//TODO
+		if (a == null )throw new IllegalArgumentException();
+		if (a.estVide())
+			return;
+		for (int i = 1; i <= MAX; i++) {
+			Elt e = new Elt(i);
+			if(a.contient(e))
+				ajouter(e);
+		}
 		
 	}
 
@@ -45,6 +53,12 @@ public interface EnsembleInterface {
 	// lance une IllegalArgumentException en cas de param?tre invalide
 	public default void enlever(EnsembleInterface a) {
 		//TODO
+		if (a == null)throw new IllegalArgumentException();
+		for (int i = 1; i <= MAX; i++) {
+			Elt e = new Elt(i);
+			if (a.contient(e))
+				enlever(e);
+		}
 		
 	}
 
@@ -52,7 +66,12 @@ public interface EnsembleInterface {
 	// lance une IllegalArgumentException en cas de param?tre invalide
 	public default void intersecter(EnsembleInterface a) {
 		//TODO
-		
+		if (a == null)throw new IllegalArgumentException();
+		for (int i = 1; i <= MAX ; i++) {
+			Elt e = new Elt(i);
+			if (!a.contient(e))
+				enlever(e);
+		}
 	}
 	
 } // interface

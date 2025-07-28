@@ -23,8 +23,8 @@ public class TestEnsemble {
 				for (int i = 0; i < NOMS_METHODES.length; i++) {
 					System.out.println((i + 1) + " -> Test " + NOMS_METHODES[i]);
 				}
-				System.out.println((NOMS_METHODES.length+1) + "-> Visualiser la chaîne de caractères renvoyée par votre méthode toString.");
-				System.out.println("autre -> revenir au choix de la classe à tester.");
+				System.out.println((NOMS_METHODES.length+1) + "-> Visualiser la chaï¿½ne de caractï¿½res renvoyï¿½e par votre mï¿½thode toString.");
+				System.out.println("autre -> revenir au choix de la classe ï¿½ tester.");
 				choix = scanner.nextInt();
 				boolean testOK = true;
 				switch (choix) {
@@ -64,11 +64,11 @@ public class TestEnsemble {
 				}
 				if (choix > NOMS_METHODES.length+1 || choix <= 0) break;
 				if (testOK)
-					System.out.println("Le test de la méthode " + NOMS_METHODES[choix - 1]
-						+ " a réussi.");
+					System.out.println("Le test de la mï¿½thode " + NOMS_METHODES[choix - 1]
+						+ " a rï¿½ussi.");
 				else
-					System.out.println("Le test de la méthode " + NOMS_METHODES[choix - 1]
-						+ " a échoué.");
+					System.out.println("Le test de la mï¿½thode " + NOMS_METHODES[choix - 1]
+						+ " a ï¿½chouï¿½.");
 			}
 		}
 	}

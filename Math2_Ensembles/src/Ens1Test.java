@@ -16,7 +16,7 @@ public class Ens1Test extends AbstractTest {
 		super(Ens1.class);
 		Field[] champs = getCls().getDeclaredFields();
 		if (champs.length > 2) {
-			System.out.println("Il est inutile de déclarer des champs supplémentaire dans Ens1.");
+			System.out.println("Il est inutile de d?clarer des champs suppl?mentaire dans Ens1.");
 			System.exit(0);
 		}
 		for (Field f : champs){
@@ -27,12 +27,12 @@ public class Ens1Test extends AbstractTest {
 				fieldCard = f;
 			}
 			else {
-				System.out.println("Que représente le champ " + f.getName() + " de type " + f.getType().getName() + " ?");
+				System.out.println("Que repr?sente le champ " + f.getName() + " de type " + f.getType().getName() + " ?");
 				System.exit(0);
 			}
 		}
 		if (fieldTab == null||fieldCard==null) {
-			System.out.println("Vous avez supprimé un attribut de la classe Ens1");
+			System.out.println("Vous avez supprim? un attribut de la classe Ens1");
 			System.exit(0);
 		}
 		fieldTab.setAccessible(true);
@@ -46,7 +46,7 @@ public class Ens1Test extends AbstractTest {
 		EnsembleInterface ens = creerEnsVide();
 		if (!ens.estVide()){
 			testOK = false;
-			System.out.println("On a créé un ensemble vide et votre méthode dit qu'il ne l'est pas !");
+			System.out.println("On a cr?? un ensemble vide et votre m?thode dit qu'il ne l'est pas !");
 		}
 		return testOK;
 	}
@@ -59,11 +59,11 @@ public class Ens1Test extends AbstractTest {
 		try {
 			Elt elt = ens.unElement() ;
 			testOK = false;
-			System.out.println("L'ensemble est vide, votre méthode aurait dû renvoyer une exception");
+			System.out.println("L'ensemble est vide, votre m?thode aurait d? renvoyer une exception");
 		} catch (MathException e) {
 			
 		} catch (Exception e) {
-			System.out.println("Votre méthode aurait du lancer une MathException mais a lancé une "+e.getClass());
+			System.out.println("Votre m?thode aurait du lancer une MathException mais a lanc? une "+e.getClass());
 			testOK = false ;
 		} 
 		
@@ -84,19 +84,19 @@ public class Ens1Test extends AbstractTest {
 				Elt elt =  ens.unElement();
 				if (elt==null) {
 					testOK = false;
-					System.out.println("Votre méthode ne trouve pas d'élément alors que l'ensemble n'est pas vide");
-					System.out.println("Ensemble créé : " + enChaine(tabElt));
+					System.out.println("Votre m?thode ne trouve pas d'?l?ment alors que l'ensemble n'est pas vide");
+					System.out.println("Ensemble cr?? : " + enChaine(tabElt));
 				} else if (!(Arrays.asList(tabElt).contains(elt))) {
 					testOK = false ;
-					System.out.println("Votre méthode a renvoyé un élément qui n'est pas dans l'ensemble") ;
-					System.out.println("Ensemble créé : " + enChaine(tabElt));
-					System.out.println("Elt renvoyé : "+elt) ;
+					System.out.println("Votre m?thode a renvoy? un ?l?ment qui n'est pas dans l'ensemble") ;
+					System.out.println("Ensemble cr?? : " + enChaine(tabElt));
+					System.out.println("Elt renvoy? : "+elt) ;
 				}
 
 
 			}
 		} catch(Exception e) {
-			System.out.println("Votre méthode a lancé une "+e.getClass()+" alors que l'ensemble n'est pas vide ") ;
+			System.out.println("Votre m?thode a lanc? une "+e.getClass()+" alors que l'ensemble n'est pas vide ") ;
 			testOK = false ;
 		}
 		Elt m = new Elt(EnsembleInterface.MAX) ;
@@ -106,13 +106,13 @@ public class Ens1Test extends AbstractTest {
 			Elt elt = ens.unElement();
 			if (elt==null) {
 				testOK = false;
-				System.out.println("Votre méthode ne trouve pas d'élément alors que l'ensemble n'est pas vide");
-				System.out.println("Ensemble créé : " + enChaine(tabEltMax));
+				System.out.println("Votre m?thode ne trouve pas d'?l?ment alors que l'ensemble n'est pas vide");
+				System.out.println("Ensemble cr?? : " + enChaine(tabEltMax));
 			} else if (!elt.equals(m)) {
 				testOK = false ;
-				System.out.println("Votre méthode a renvoyé un élément qui n'est pas dans l'ensemble") ;
-				System.out.println("Ensemble créé : " + enChaine(tabEltMax));
-				System.out.println("Elt renvoyé : "+elt) ;
+				System.out.println("Votre m?thode a renvoy? un ?l?ment qui n'est pas dans l'ensemble") ;
+				System.out.println("Ensemble cr?? : " + enChaine(tabEltMax));
+				System.out.println("Elt renvoy? : "+elt) ;
 				testOK = false ;
 			}
 		} catch (Exception e) {
@@ -130,8 +130,8 @@ public class Ens1Test extends AbstractTest {
 		EnsembleInterface ens = creerEnsVide();
 		if (ens.cardinal()!= 0){
 			testOK = false;
-			System.out.println("On a créé un ensemble vide.");
-			System.out.println("Votre méthode cardinal dit qu'il contient " + ens.cardinal() + " élément(s).");
+			System.out.println("On a cr?? un ensemble vide.");
+			System.out.println("Votre m?thode cardinal dit qu'il contient " + ens.cardinal() + " ?l?ment(s).");
 		}
 		return testOK;
 	}
@@ -141,9 +141,9 @@ public class Ens1Test extends AbstractTest {
 			IllegalAccessException {
 		super.visualiserToString();
 		EnsembleInterface ens = creerEnsVide();
-		System.out.println("Ensemble à afficher : ");
+		System.out.println("Ensemble ? afficher : ");
 		System.out.println("{}");
-		System.out.println("Chaîne de caractères renvoyée par votre toString : ");
+		System.out.println("Cha?ne de caract?res renvoy?e par votre toString : ");
 		System.out.println(ens);
 	}
 
@@ -194,7 +194,7 @@ public class Ens1Test extends AbstractTest {
 	protected boolean verifInit() throws IllegalAccessException{
 		boolean[] tabTrouve = (boolean[]) fieldTab.get(getEnsemble());
 		if (tabTrouve == null){
-			System.out.println("Le tableau de booleens n'a pas été initialisé !");
+			System.out.println("Le tableau de booleens n'a pas ?t? initialis? !");
 			return false;
 		}
 		else if (tabTrouve.length!= Elt.MAXELT.val()+1){
