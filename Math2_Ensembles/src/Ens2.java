@@ -62,23 +62,18 @@ public class Ens2 extends EnsembleAbstrait {
 
 	public void enlever(Elt e) {
 		//TODO
-		if (e == null) throw new IllegalArgumentException("e ne peut pas être null");
-		if (cardinal >= elements.length)
-			throw new IllegalStateException("L'ensemble est plein");
-		if (!contient(e)) return;
-		int indiceE = 0;
-		if (contient(e)) {
+			if (e == null)
+				throw new IllegalArgumentException();
+
 			for (int i = 0; i < cardinal; i++) {
-				if (elements[i].equals(e))
-					indiceE = i;
+				if (elements[i].equals(e)) {
+					elements[i] = elements[cardinal - 1];
+					elements[cardinal - 1] = null;
+					cardinal--;
+					return;
+				}
 			}
-			for (int i = indiceE; i < cardinal - 1; i++) {
-				elements[i] = elements[i + 1];
-			}
-			cardinal--;
-			elements[cardinal] = null;
 		}
-	}
 
 	public int cardinal() {
 		//TODO
@@ -88,16 +83,16 @@ public class Ens2 extends EnsembleAbstrait {
 	public void complementer() {
 		//TODO;
 		Elt[] complementaire = new Elt[MAX];
-		int indice =0;
+		int cpt =0; // compteur
 		for (int i = 1; i <= MAX ; i++) {
 			Elt e = new Elt(i);
 			if (!contient(e)) {
-				complementaire[indice] = e;
-				indice++;
+				complementaire[cpt] = e;
+				cpt++;
 			}
 		}
 		elements = complementaire;
-		cardinal = indice;
+		cardinal = cpt;
 	}
 
 	public String toString() {
