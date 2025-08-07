@@ -3,7 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BINV1100-1-MATH2-2024-2025.iml" filepath="$PROJECT_DIR$/.idea/BINV1100-1-MATH2-2024-2025.iml" />
-      <module fileurl="file://$PROJECT_DIR$/math2_ensembles/math2_ensembles.iml" filepath="$PROJECT_DIR$/math2_ensembles/math2_ensembles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Examens/BINV1100_Juin2024_13h00-15h00/BINV1100_Juin2024_13h00-15h00.iml" filepath="$PROJECT_DIR$/Examens/BINV1100_Juin2024_13h00-15h00/BINV1100_Juin2024_13h00-15h00.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Examens/Examens.iml" filepath="$PROJECT_DIR$/Examens/Examens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Math2_Ensembles/Math2_Ensembles.iml" filepath="$PROJECT_DIR$/Math2_Ensembles/Math2_Ensembles.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Math2_Matrices/Math2_Matrices.iml" filepath="$PROJECT_DIR$/Math2_Matrices/Math2_Matrices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Math2_Relations/Math2_Relations.iml" filepath="$PROJECT_DIR$/Math2_Relations/Math2_Relations.iml" />
     </modules>
   </component>
 </project>
